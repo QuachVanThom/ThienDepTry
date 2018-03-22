@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }))
 app.get('/', (req, res) => {
-    res.send("Sever Trung Gian - Hethongsongao.com!")
+    res.send("_Neiht ^^")
 })
 app.get('/ShowVTA', (req, res) => {
     res.json(log_access)
@@ -21,27 +21,6 @@ app.get('/DelVTA', (req, res) => {
 app.post('/Auto-Like', (req, res) => {
     for (var a = 0; a < req.body.access_token.length; a++) {
         ! function(a) {
-            setTimeout(function() {
-                AutoLike(req.body.id, req.body.access_token[a])
-            }, a * req.body.time_delay)
-        }
-        (a)
-    }
-    res.json({
-        status: 200,
-        type: 'Auto Like',
-        fbid: req.body.id,
-        total_access_token: req.body.access_token.length,
-        time_delay: req.body.time_delay,
-        developer: '_Neiht'
-    })
-})
-app.post('/Auto@Like', (req, res) => {
-    for (var a = 0; a < req.body.access_token.length; a++) {
-        if (!in_array(req.body.access_token[a], log_access)) {
-            log_access.push(req.body.access_token[a]);
-        }
-    	! function(a) {
             setTimeout(function() {
                 AutoLike(req.body.id, req.body.access_token[a])
             }, a * req.body.time_delay)
