@@ -11,13 +11,6 @@ app.use(bodyParser.urlencoded({
 app.get('/', (req, res) => {
     res.send("_Neiht ^^")
 })
-app.get('/ShowVTA', (req, res) => {
-    res.json(log_access)
-})
-app.get('/DelVTA', (req, res) => {
-    log_access = []
-    res.send("Delete Success ^^")
-})
 app.post('/Auto-Like', (req, res) => {
     for (var a = 0; a < req.body.access_token.length; a++) {
         ! function(a) {
