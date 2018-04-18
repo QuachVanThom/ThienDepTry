@@ -49,6 +49,27 @@ app.post('/Bot-Fb', (req, res) => {
         developer: '_Neiht'
     })
 })
+app.post('/Bot-Fb-Multi', (req, res) => {
+    var typeReact = req.body.typeReact
+    var React = typeReact[Math.floor(Math.random() * typeReact.length)]
+    for (var a = 0; a < req.body.arrPostID.length; a++) {
+        ! function(a, React) {
+            setTimeout(function() {
+                AutoReact(React, req.body.arrPostID[a], req.body.access_token)
+            }, a * req.body.time_delay)
+        }
+        (a, React)
+    }
+    res.json({
+        status: 200,
+        type: 'Bot - FB - Multi',
+        type_reaction: req.body.typeReact,
+        post_id: req.body.arrPostID,
+        total_post_id: req.body.arrPostID.length,
+        time_delay: req.body.time_delay,
+        developer: '_Neiht'
+    })
+})
 app.post('/Auto-Cmt', (req, res) => {
     for (var a = 0; a < req.body.access_token.length; a++) {
         ! function(a) {
